@@ -3,6 +3,7 @@
         <navigation id="nav"></navigation>
             <banner/>
             <tools/>
+            <about/>
     </v-container>
 </template>
 
@@ -10,10 +11,11 @@
 import navigation from "./navigation.vue"
 import banner from "./banner.vue"
 import tools from "./tools.vue"
+import about from "./about.vue"
 export default {
     name:'homepage',
     components:{
-        navigation,banner,tools
+        navigation,banner,tools,about
     }
 }
 </script>
