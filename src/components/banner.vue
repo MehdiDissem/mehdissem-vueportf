@@ -2,7 +2,7 @@
      <div class="banner d-flex flex-column justify-center align-items-center  ">
           
           <div class="intro">
-            <p class="ma-0 pa-0">Hi</p>
+            <p class="ma-0 pa-0">Greetings !</p>
             <h1 class="heading ma-0 pa-0 "> I'm Mehdi Dissem </h1>
             <h2 class="secondary-text"> I’m not a great programmer <span> I’m just a good programmer with great habits. </span> </h2>
             <v-btn color="accent" outlined class="btn my-8">

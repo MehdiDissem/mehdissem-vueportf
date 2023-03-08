@@ -2,16 +2,18 @@
     <v-container fluid class='homepage ma-0 pa-0' app >
         <navigation id="nav"></navigation>
             <banner/>
+            <tools/>
     </v-container>
 </template>
 
 <script>
 import navigation from "./navigation.vue"
 import banner from "./banner.vue"
+import tools from "./tools.vue"
 export default {
     name:'homepage',
     components:{
-        navigation,banner
+        navigation,banner,tools
     }
 }
 </script>
