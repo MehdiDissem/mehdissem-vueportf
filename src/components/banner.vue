@@ -1,64 +1,119 @@
 <template>
-     <div class="banner d-flex flex-column justify-center align-items-center  ">
-          
-          <div class="intro">
-            <p class="ma-0 pa-0">Greetings !</p>
-            <h1 class="heading ma-0 pa-0 "> I'm Mehdi Dissem </h1>
-            <h2 class="secondary-text"> I’m not a great programmer <span> I’m just a good programmer with great habits. </span> </h2>
-            <v-btn color="accent" outlined class="btn my-8">
-                check more
-            </v-btn>
-          </div>
+    <div class="banner d-flex flex-column justify-center align-items-center">
+      <div class="intro">
+        <p class="ma-0 pa-0">Greetings !</p>
+        <h1 class="heading ma-0 pa-0">
+          My name is
+          <span class="animated-text">M</span>
+          <span class="animated-text">e</span>
+          <span class="animated-text">h</span>
+          <span class="animated-text">d</span>
+          <span class="animated-text">i</span>
+          <span class="animated-text">&nbsp;</span>
+          <span class="animated-text">D</span>
+          <span class="animated-text">i</span>
+          <span class="animated-text">s</span>
+          <span class="animated-text">s</span>
+          <span class="animated-text">e</span>
+          <span class="animated-text">m</span>
+        </h1>
+        <h2 class="secondary-text">
+          I’m not a great programmer
+          <span> I’m just a good programmer with great habits. </span>
+        </h2>
+        <v-btn color="accent" outlined class="btn my-8">check more</v-btn>
+      </div>
     </div>
-</template>
-
-<script>
-export default {
-    name:"banner"
+  </template>
+  
+  <script>
+  export default {
+    name: "banner",
+  };
+  </script>
+  
+  <style lang="scss">
+    .banner {
+      text-align: left;
+      height: 100vh;
+      width: 100vw;
+      background-color: var(--main-bg-color);
+      padding: 10%;
+    }
+  
+    .intro {
+      p {
+        margin-left: 10px;
+        padding: 0;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: var(--dark-accent);
+      }
+  
+      span {
+        color: var(--dark-accent);
+      }
+  
+      .btn {
+        color: var(--gray);
+      }
+  
+      .secondary-text {
+        color: var(--gray);
+      }
+  
+      .heading {
+        margin: 0px;
+        padding: 0px;
+        font-size: 4em;
+        color: var(--highlight-color);
+      }
+  
+      .animated-text {
+        display: inline-block;
+        animation: fade 2s ease-in-out infinite;
+        opacity: 0;
+      }
+  
+      .animated-text:nth-child(2n) {
+        animation-delay: 0.5s;
+      }
+      .heading:hover .animated-text {
+  animation-play-state: paused;
+  display: inline-block;
+  opacity: 1;
+  animation: glitch 0.5s ease-in-out infinite;
 }
-</script>
 
-
-<style lang="scss" >
-     .banner {
-        text-align: left;
-        height:100vh;
-        width:100vw;
-        background-color: var(--main-bg-color);
-        padding: 10%;
+@keyframes glitch {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(2px, -2px);
+  }
+  50% {
+    transform: translate(-2px, 2px);
+  }
+  75% {
+    transform: translate(-2px, -2px);
+  }
+  100% {
+    transform: translate(2px, 2px);
+  }
+}
+  
+      @keyframes fade {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
     }
-    
-    .intro{
-       
-        p {
-            margin-left: 10px; 
-            padding: 0;
-            font-size: 1.5em ;
-            font-weight: bold;
-            color :var(--dark-accent) ;
-        };
-
-        span{
-            color : var(--dark-accent);
-        }
-
-        .btn{
-            color: var(--gray);
-        }
-
-      
-        .secondary-text{
-            color: var(--gray) ;
-        }
-
-        .heading {
-            margin:0px; 
-            padding: 0px;
-            font-size: 4em ;
-            color : var(--highlight-color);
-        }
-
-    }
-
-
-</style>
+  </style>
+  
