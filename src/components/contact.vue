@@ -67,29 +67,21 @@
         },
         data(){ 
             return{
-                
+                loading:false,
+                nameRules: [v => !!v || 'Name is required'],
+                emailRules: [
+                    v => !!v || 'E-mail is required',
+                    v => /.+@.+/.test(v) || 'E-mail must be valid',
+                  ],
+                name:'',
+                email:'',
+                message:''
                 }
         },
         methods:{
 
             submit(){
                 this.loading=true;
-                // if(this.$refs.form.validate()){
-                // //I need to fetch the api
-                // let  params={
-                //     name:this.name,
-                //     email:this.email,
-                //     message:this.message,
-                // };
-                // console.log(JSON.stringify(params))
-                // client.post('submit_message',params)
-                //     .then((res)=>{
-                //         console.log(JSON.stringify(res));
-                //         this.loading=false;
-                //         this.$refs.form.reset();
-                //         this.message='message sent successfull';
-                //      })             
-                //  }
                 this.loading=false;                  
             },        
         },

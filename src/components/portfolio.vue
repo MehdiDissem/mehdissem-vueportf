@@ -1,16 +1,16 @@
 <template>
-    <v-container fluid class="ma-0 portfolio" id="portfolio">
-      <h2 class="">Portfolio</h2>
-      <v-container fluid class="projects pa-0 pa-md-4">
-        <v-row align="center" justify="center" class="mx-0">
-          <v-col cols="12" md="5" v-for="(project, index) in myProjects" :key="index">
+  <v-container fluid class="ma-0 portfolio" id="portfolio">
+    <h2 class="">Portfolio</h2>
+    <v-container fluid class="projects pa-0 pa-md-4">
+          <v-row align="center" justify="center" class="mx-0" no-gutters>
+          <v-col cols="12" md="6" lg="4" v-for="(project, index) in myProjects" :key="index">
             <v-hover v-slot="{ hover }">
-              <v-card class="mb-4 grey project" elevation="2" round>
+              <v-card class="mb-4 grey project" elevation="2" height="100%" :rounded="hover" :href="project.link" target="_blank">
                 <v-img
                   :src="project.picture"
-                  width="100%"
-                  max-height="340px"
+                  max-height="100%"
                   class="d-flex align-center justify-center"
+                  :class="{ 'grey lighten-3': !hover }"
                 >
                   <v-expand-transition>
                     <div
@@ -42,9 +42,22 @@
             </v-hover>
           </v-col>
         </v-row>
-      </v-container>
     </v-container>
-  </template>
+
+      <h1 class="display-2 text-center mt-5 animated fadeIn delay-1s">
+        <a href="https://github.com/MehdiDissem" target="_blank" class="github-link">
+
+          <span>
+            Check out my GitHub for even more!
+          </span>
+          <svg viewBox="0 0 260 60" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1,30 Q70,40 130,30 Q190,20 250,30" stroke="#950740" stroke-width="5" fill="none" stroke-dasharray="10,10"/>
+    </svg>
+        </a>
+      </h1>
+
+</v-container>
+</template>
 
 <script>
 import myProjects from "../store/index.js"
@@ -172,4 +185,50 @@ import myProjects from "../store/index.js"
     width: 100%;
   }
 }
+
+.github-link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #950740;
+  position: relative;
+  /* overflow: hidden; */
+  z-index: 1;
+  /* padding-right: 10px; */
+}
+
+.github-link span {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  /* padding-right: 20px; */
+}
+
+.github-link svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+}
+
+.github-link path {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: dash 3s ease-in-out forwards infinite;
+}
+
+.github-link:hover path {
+  stroke-dashoffset: 0;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
 </style>
