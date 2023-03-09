@@ -6,6 +6,7 @@
             <about/>
             <portfolio></portfolio>
             <contact/>
+            <myFooter></myFooter>
     </v-container>
 </template>
 
@@ -16,10 +17,11 @@ import tools from "./tools.vue"
 import about from "./about.vue"
 import portfolio from "./portfolio.vue"
 import contact from "./contact.vue"
+import myFooter from "./footer.vue"
 export default {
     name:'homepage',
     components:{
-        navigation,banner,tools,about,portfolio,contact
+        navigation,banner,tools,about,portfolio,contact,myFooter
     }
 }
 </script>
