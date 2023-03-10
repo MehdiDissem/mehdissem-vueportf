@@ -1,25 +1,27 @@
 <template>
-    <div class="banner d-flex flex-column justify-center align-items-center">
-      <div class="intro">
-        <p class="ma-0 pa-0" v-on:mouseover="changeMessage">{{ message }}</p>
-        <h1 class="heading ma-0 pa-0">
-          My name is
-          <span class="animated-text">M</span>
-          <span class="animated-text">e</span>
-          <span class="animated-text">h</span>
-          <span class="animated-text">d</span>
-          <span class="animated-text">i</span>
-          <span class="animated-text">&nbsp;</span>
-          <span class="animated-text">D</span>
-          <span class="animated-text">i</span>
-          <span class="animated-text">s</span>
-          <span class="animated-text">s</span>
-          <span class="animated-text">e</span>
-          <span class="animated-text">m</span>
-        </h1>
-        <h2 class="secondary-text" v-bind:title="quote" v-on:mouseover="changeQuote" v-html="quoteWithSpan"></h2>
-        <v-btn color="accent" outlined class="btn my-8">check more</v-btn>
-      </div>
+    <div class="banner d-flex flex-column justify-center align-items-center" @mousemove="moveCircle">
+        <div class="circle" :style="{ left: circlePos.x + 'px', top: circlePos.y + 'px' }"></div>
+        <div class="intro">
+            <p class="ma-0 pa-0" v-on:mouseover="changeMessage">{{ message }}</p>
+            <h1 class="heading ma-0 pa-0">
+                My name is
+                <span class="animated-text">M</span>
+                <span class="animated-text">e</span>
+                <span class="animated-text">h</span>
+                <span class="animated-text">d</span>
+                <span class="animated-text">i</span>
+                <span class="animated-text">&nbsp;</span>
+                <span class="animated-text">D</span>
+                <span class="animated-text">i</span>
+                <span class="animated-text">s</span>
+                <span class="animated-text">s</span>
+                <span class="animated-text">e</span>
+                <span class="animated-text">m</span>
+            </h1>
+            <h2 class="secondary-text" v-bind:title="quote" v-on:mouseover="changeQuote" v-html="quoteWithSpan"></h2>
+            <v-btn color="accent" outlined class="btn my-8">check more</v-btn>
+        </div>
+        
     </div>
   </template>
   
@@ -37,7 +39,8 @@
           "Simplicity is the soul of my <span class='highlight'>efficiency</span>.",
           "I fix the <span class='highlight'>cause</span>, not the symptom."
         ],
-        quoteIndex: 0
+        quoteIndex: 0,
+        circlePos: { x: 0, y: 0 }
       };
     },
     computed: {
@@ -52,7 +55,10 @@
       },
       changeQuote() {
         this.quoteIndex = Math.floor(Math.random() * this.quotes.length);
-      }
+      },
+      moveCircle(event) {
+        this.circlePos = { x: event.clientX, y: event.clientY };
+    }
     }
   };
   </script>
@@ -62,13 +68,38 @@
 // .highlight {
 //     color: var(--highlight-color);
 //   }
-  .banner {
-    text-align: left;
-    height: 100vh;
-    width: 100vw;
-    background-color: var(--main-bg-color);
-    padding: 10%;
-  }
+    .banner {
+        text-align: left;
+        height: 100vh;
+        width: 100vw;
+        background-color: var(--main-bg-color);
+        padding: 10%;
+        position:relative
+    }
+    .circle {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: yellow;
+        pointer-events: none; 
+    }
+    @media screen and (max-width: 768px) {
+      .circle {
+        display: none;
+      }
+    }
+
+    .secondary-text:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+    }
 
   .intro {
     p {
@@ -109,8 +140,14 @@
       animation-delay: 0.5s;
     }
 
-
-  }
+    }
+    .animated-text:hover {
+    animation-play-state: paused;
+    opacity: 1;
+    transform: translateX(0);
+    }
+  
+  
 
   @keyframes glitch {
     0% {

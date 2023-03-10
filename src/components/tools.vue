@@ -8,7 +8,7 @@
            
            <v-col class="tools-names " xs="12"  sm="12" md="4">
               <p> Languages</p>
-              <p><img class="languages-icons" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" @mouseenter="playTickSound"/>
+              <p><img class="languages-icons" data-name="JavaScript" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" @mouseenter="playTickSound"/>
                 <img class="languages-icons" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" @mouseenter="playTickSound"/>
                 <img class="languages-icons" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" @mouseenter="playTickSound" />
                 
@@ -133,10 +133,13 @@ export default {
             margin-right: 10px;
             transition: transform 0.2s;
         }
+        
 
         .languages-icons:hover {
             transform: scale(1.1);
+            
         }
         }
+        
    }
 </style>
