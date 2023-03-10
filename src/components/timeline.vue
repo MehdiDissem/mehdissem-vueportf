@@ -1,31 +1,124 @@
-
 <template>
-    <v-timeline direction="horizontal" line-inset="12">
-      <v-timeline-item>
-        <template v-slot:opposite>
-          Opposite
-        </template>
-        Content
-      </v-timeline-item>
-  
-      <v-timeline-item>
-        <template v-slot:opposite>
-          Opposite
-        </template>
-        Content
-      </v-timeline-item>
-  
-      <v-timeline-item>
-        <template v-slot:opposite>
-          Opposite
-        </template>
-        Content
-      </v-timeline-item>
-    </v-timeline>
+    <div class="backgr">
+        <h2 id="title"> My process </h2> 
+        <v-timeline class="timeline" direction="horizontal" line-inset="12">
+          <v-timeline-item v-for="experience in myExperiences" :key="experience.position" class="timeline-item">
+            <template v-slot:opposite>
+              <div class="timeline-company">
+                {{ experience.company }}
+                <br>
+                {{ experience.start_date }} - {{ experience.end_date ? experience.end_date : 'Present' }}
+              </div>
+            </template>
+            <div class="timeline-content">
+              <h3 class="timeline-position">{{ experience.position }}</h3>
+              <ul class="timeline-responsibilities">
+                <li v-for="responsibility in experience.responsibilities" :key="responsibility">{{ responsibility }}</li>
+              </ul>
+            </div>
+          </v-timeline-item>
+        </v-timeline>
+    </div>
   </template>
-
+  
   <script>
-export default {
-    name:"timeline",
+  import myExperiences from '@/store/workExperiences';
+  
+  export default {
+    name: 'timeline',
+    data() {
+      return {
+        myExperiences: myExperiences.sort((a, b) => new Date(a.start_date) - new Date(b.start_date))
+      }
+    }
+  }
+  </script>
+  
+  <style scoped>
+  #title{
+    width: 100vw;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--accent-color);
+    padding-top: 15px;
+    text-align: center;
+    margin-left:-7%
 }
-</script>
+    .backgr{
+    background-color: var(--main-bg-color);
+    height: 100vh;
+    width: 100vw;
+    padding: 5%;
+    
+    }
+  
+  .timeline {
+    margin: 50px 0px;
+    
+  }
+  
+  .timeline-item {
+    position: relative;
+    padding: 20px 0;
+    
+  }
+  
+  .timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #fff;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+  
+  .timeline-item::after {
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: calc(50% + 2px);
+    height: calc(100% - 20px);
+    width: 2px;
+  }
+  
+  
+  .timeline-content {
+    font-size: 15px;
+    margin-left: 32px;
+    color:white
+  }
+  
+  .timeline-position {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-responsibilities {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 20px;
+    list-style-type: disc;
+  }
+  
+  .timeline-company {
+    color: var(--accent-color);
+    font-weight: bold;
+    text-align: right;
+  }
+  </style>

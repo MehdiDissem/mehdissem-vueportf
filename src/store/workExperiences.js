@@ -8,10 +8,7 @@ const myExperiences =[  {    "position": "Chief web analytics consultant",
      "Communicating with marketing department about analysis from campaigns.",      
      "Producing reports for the Management team.",      
      "Data analysis and reporting.",      
-     "Mapping competitors and making digital cartography.",     
-      "Monitoring Social Media.",      
-      "Creating content.",      
-      "Analyzing KPIs."    
+     "Mapping competitors and making digital cartography.", 
     ]
   },
   {
