@@ -1,7 +1,9 @@
 <template>
     <div class="banner d-flex flex-column justify-center align-items-center">
       <div class="intro">
-        <p class="ma-0 pa-0">Greetings !</p>
+        <p class="ma-0 pa-0" v-on:mouseover="changeMessage">
+            {{ message}}
+        </p>
         <h1 class="heading ma-0 pa-0">
           My name is
           <span class="animated-text">M</span>
@@ -29,8 +31,20 @@
   <script>
   export default {
     name: "banner",
+    data() {
+      return {
+        messages: ["Hello !", "Bonjour !", "Hola !", "こんにちは！"],
+        message: "Hello !",
+      };
+    },
+    methods: {
+      changeMessage() {
+        const randomIndex = Math.floor(Math.random() * this.messages.length);
+        this.message = this.messages[randomIndex];
+      },
+    },
   };
-  </script>
+</script>
   
   <style lang="scss">
     .banner {
