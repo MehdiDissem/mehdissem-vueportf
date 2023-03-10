@@ -49,8 +49,8 @@
                 <v-btn outlined medium
                     @click='submit()'
                     :loading='loading'
-                    class='montserrat  btn' 
-                    color='primary'>
+                    class='montserrat  btn my-8' 
+                    color='accent'>
                     Submit
                 </v-btn>    
                 </v-form>
@@ -131,6 +131,7 @@
 .btn{
    font-weight: bold;
    border-width:3px ;
+   color: var(--gray);
 } 
 }
 
