@@ -67,12 +67,12 @@
   content: '';
   position: absolute;
   left: -12px;
-  top: 50%;
+  top: 51.8%;
   transform: translateY(-50%);
   height: 12px;
   width: 12px;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: white;
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -88,20 +88,12 @@
   }
 }
   
-  .timeline-item::after {
-    content: '';
-    position: absolute;
-    left: -3px;
-    top: calc(50% + 2px);
-    height: calc(100% - 20px);
-    width: 2px;
-  }
   
   
   .timeline-content {
     font-size: 15px;
     margin-left: 32px;
-    color:white
+    color:white;
   }
   
   .timeline-position {

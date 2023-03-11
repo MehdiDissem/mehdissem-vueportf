@@ -29,7 +29,7 @@ const myExperiences =[    {        "position": "Chief web analytics consultant",
     "position": "FullStack JS Instructor",
     "company": "ReBootKamp (RBK)",
     "start_date": "2023-01-01",
-    "end_date": "current",
+    "end_date": "Present",
     "responsibilities": [
       "Giving lectures about software development and fullstack JavaScript fundamentals.",
       "Providing guidance to students in debugging their code and offering technical assistance.",
