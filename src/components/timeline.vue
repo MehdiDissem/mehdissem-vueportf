@@ -1,7 +1,7 @@
 <template>
     <div class="backgr">
         <h2 id="title"> My process </h2> 
-        <v-timeline class="timeline" direction="horizontal" line-inset="12">
+        <v-timeline class="timeline desktop-only" direction="horizontal" line-inset="12">
           <v-timeline-item v-for="experience in myExperiences" :key="experience.position" class="timeline-item">
             <template v-slot:opposite>
               <div class="timeline-company">
@@ -121,4 +121,57 @@
     font-weight: bold;
     text-align: right;
   }
+
+  @media screen and (max-width: 768px)  {
+
+    #title{
+    width: 100vw;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--accent-color);
+    padding-top: 15px;
+    text-align: center;
+    margin-bottom:20px;
+}
+    .backgr{
+    background-color: var(--main-bg-color);
+    height: auto;
+    width: auto;
+      }
+  .timeline-content{
+    font-size: 5px;
+    margin-bottom:20px;
+  }
+  .timeline {
+    direction: vertical;
+  }
+  .desktop-only {
+    display:contents;
+  }
+  
+  
+  .timeline-position {
+    font-size: 17px;
+    margin-bottom:20px;
+  }
+  
+  .timeline-company {
+    margin-top: 10px;
+    margin-bottom:20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .timeline-responsibilities {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    list-style-type:disc;
+    font-size: large;
+  }
+  .timeline-item::before {
+    animation: none;
+  }
+}
+
   </style>
