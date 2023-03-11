@@ -37,13 +37,13 @@
               <v-textarea
                 :rules="messageRules"
                 v-model="message"
-                background-color="#d3d3d3"
-                class="montserrat my-8"
+                background-color="#CCCCCC"
+                class="message-field montserrat my-8"
                 placeholder="message"
                 outlined
               ></v-textarea>
               <v-btn outlined medium @click="sendEmail" :loading="loading" class="montserrat  btn my-8" color="accent">
-                Submit
+                {{ success ? 'Sent!' : 'Submit' }}
                 </v-btn>
             </v-form>
           </v-col>
@@ -61,6 +61,7 @@
     data() {
       return {
         loading: false,
+        success:false,
         nameRules: [v => !!v || 'Name is required'],
         emailRules: [
           v => !!v || 'E-mail is required',
@@ -83,9 +84,10 @@
           .then((response) => {
             console.log('SUCCESS!', response.status, response.text);
             this.loading = false;
-            this.name = '';
-            this.email = '';
-            this.message = '';
+            this.success = true;
+            this.name = 'Name sent successfully';
+            this.email = 'Email sent successfully';
+            this.message='message sent successfully'
           }, (err) => {
             console.log('FAILED...', err);
             this.loading = false;
@@ -139,6 +141,9 @@
    border-width:3px ;
    color: var(--gray);
 } 
+}
+.message-field{
+    background-color: #fff;
 }
 
 

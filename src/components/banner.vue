@@ -18,7 +18,7 @@
                 <span class="animated-text">e</span>
                 <span class="animated-text">m</span>
             </h1>
-            <h2 class="secondary-text" v-bind:title="quote" v-on:mouseover="changeQuote" v-html="quoteWithSpan"></h2>
+            <h2 class="secondary-text"  v-on:mouseover="changeQuote" v-html="quoteWithSpan"></h2>
             <v-btn color="accent" outlined class="btn my-8">check more</v-btn>
         </div>
         

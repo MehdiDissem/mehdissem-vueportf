@@ -4,6 +4,10 @@
 
            <v-col class="" xs="12" sm="12"  md="4"> 
                <h2 id="title"> My tools </h2> 
+               <div class="sound-div">
+                   <p>(Click me then hover over the icons</p>
+                   <p>for a nice sound)</p>
+               </div>
             </v-col>
            
            <v-col class="tools-names " xs="12"  sm="12" md="4">
@@ -142,4 +146,25 @@ export default {
         }
         
    }
+
+   @media (max-width: 600px) {
+    .sound-div {
+      display: none;
+    }
+  }
+
+  .sound-div {
+  animation: bounce 1s infinite;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 </style>
