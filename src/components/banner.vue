@@ -26,6 +26,17 @@
                 <p>Your web browser doesn't have a PDF plugin. Instead, you can <a :href="resume">click here to download the PDF file.</a></p>
               </object>
             </v-dialog>
+            <v-btn color="accent" outlined class="btn my-8" href="https://github.com/MehdiDissem" target="_blank">
+                <v-icon left>
+                  <i class="fab fa-github icon"></i>
+                </v-icon>
+              </v-btn>
+
+              <v-btn color="accent" outlined class="btn my-8" href="https://www.linkedin.com/in/mehdi-dissem/" target="_blank">
+                <v-icon left>
+                  <i class="fab fa-linkedin icon"></i>
+                </v-icon>
+              </v-btn>
         </div>
         
     </div>
@@ -33,6 +44,8 @@
   
   <script>
   import resume from '@/assets/Resume-Mehdi-Dissem.pdf'
+  import '@fortawesome/fontawesome-free/css/all.css'
+  import '@fortawesome/fontawesome-free/js/all.js'
   export default {
     name: "banner",
     data() {
@@ -84,6 +97,10 @@
 // .highlight {
 //     color: var(--highlight-color);
 //   }
+    .icon{
+      font-size:25px;
+      color:#950740;
+    }
     .banner {
         text-align: left;
         height: 100vh;
@@ -132,6 +149,7 @@
 
     .btn {
       color: var(--gray);
+      margin:5px;
     }
 
     .secondary-text {
