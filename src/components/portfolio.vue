@@ -68,10 +68,11 @@ import myProjects from "../store/index.js"
     mounted(){
         // this.$store.dispatch('getProjects')
         console.log(this.myProject)
-    },
+        this.myProjects=myProjects    
+      },
     data () {
       return {
-        myProjects
+        myProjects:myProjects
             
       }
     },

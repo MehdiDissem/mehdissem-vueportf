@@ -22,7 +22,7 @@
             <v-btn color="accent" outlined class="btn my-8" @click="showResumeDialog = true">View Resume</v-btn>
             <v-dialog v-model="showResumeDialog" width="80%">
               <object :data="resume" type="application/pdf" width="100%" height="600px">
-                <iframe src="@/assets/Resume-Mehdi-Dissem.pdf" type="application/pdf" width="100%" height="600px" ></iframe>
+                <embed :src="resume" type="application/pdf" width="100%" height="600px" />
                 <p>Your web browser doesn't have a PDF plugin. Instead, you can <a :href="resume">click here to download the PDF file.</a></p>
               </object>
             </v-dialog>
@@ -32,7 +32,7 @@
   </template>
   
   <script>
-  import resume from '@/assets/resume-MehdiDissem.pdf'
+  import resume from '@/assets/Resume-Mehdi-Dissem.pdf'
   export default {
     name: "banner",
     data() {
