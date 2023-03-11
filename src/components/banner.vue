@@ -19,13 +19,20 @@
                 <span class="animated-text">m</span>
             </h1>
             <h2 class="secondary-text"  v-on:mouseover="changeQuote" v-html="quoteWithSpan"></h2>
-            <v-btn color="accent" outlined class="btn my-8">check more</v-btn>
+            <v-btn color="accent" outlined class="btn my-8" @click="showResumeDialog = true">View Resume</v-btn>
+            <v-dialog v-model="showResumeDialog" width="80%">
+              <object :data="resume" type="application/pdf" width="100%" height="600px">
+                <embed src="@/assets/resume-MehdiDissem.pdf" type="application/pdf" width="100%" height="600px" />
+                <p>Your web browser doesn't have a PDF plugin. Instead, you can <a :href="resume">click here to download the PDF file.</a></p>
+              </object>
+            </v-dialog>
         </div>
         
     </div>
   </template>
   
   <script>
+  import resume from '@/assets/resume-MehdiDissem.pdf'
   export default {
     name: "banner",
     data() {
@@ -40,9 +47,15 @@
           "I fix the <span class='highlight'>cause</span>, not the symptom."
         ],
         quoteIndex: 0,
-        circlePos: { x: 0, y: 0 }
+        circlePos: { x: 0, y: 0 },
+        showResumeDialog: false,
+        resume: ""
       };
     },
+    mounted() {
+    // set the resume data property to the imported pdf file
+    this.resume = resume;
+  },
     computed: {
       quoteWithSpan() {
         return this.quotes[this.quoteIndex];
@@ -58,9 +71,12 @@
       },
       moveCircle(event) {
         this.circlePos = { x: event.clientX, y: event.clientY };
+    },
+    toggleOverlay() {
+      this.showResumeDialog = !this.showResumeDialog;
     }
-    }
-  };
+  }
+  }
   </script>
   
   <style lang="scss">
