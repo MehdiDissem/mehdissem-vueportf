@@ -42,46 +42,64 @@
     color: var(--accent-color);
     padding-top: 15px;
     text-align: center;
-    margin-left: -7%;
+    margin-left:-7%;
     margin-bottom: 20px;
-  }
-  
-  .backgr{
+}
+    .backgr{
     background-color: var(--main-bg-color);
+    height: auto;
+    width: auto;
     padding: 5%;
-  }
+    
+    }
   
   .timeline {
-    margin: 30px 0;
+    margin: 50px 0px;
+    
   }
   
   .timeline-item {
     position: relative;
     padding: 20px 0;
+    
   }
   
   .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -12px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-    background-color: white;
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 51.8%;
+  transform: translateY(-50%);
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: white;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
   }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+  
+  
   
   .timeline-content {
-    font-size: 16px;
+    font-size: 15px;
     margin-left: 32px;
-    color: white;
+    color:white;
   }
   
   .timeline-position {
     margin-top: 0;
     margin-bottom: 10px;
-    font-size: 18px;
   }
   
   .timeline-responsibilities {
@@ -89,55 +107,64 @@
     margin-bottom: 0;
     padding-left: 20px;
     list-style-type: disc;
-    font-size: 14px;
   }
   
   .timeline-company {
     color: var(--accent-color);
     font-weight: bold;
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    font-size: 16px;
+    text-align: right;
   }
-  
+
   @media screen and (max-width: 768px)  {
+
     #title{
-      font-size: 20px;
-      margin-left: 0;
-    }
-  
+    width: 100vw;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--accent-color);
+    padding-top: 15px;
+    text-align: center;
+    margin-bottom:20px;
+}
     .backgr{
-      padding: 2%;
-    }
-  
-    .timeline-content{
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-  
-    .timeline {
-      margin: 20px 0;
-    }
-  
-    .timeline-position {
-      font-size: 16px;
-    }
-  
-    .timeline-company {
-      font-size: 14px;
-      margin-top: 5px;
-      margin-bottom: 10px;
-    }
-  
-    .timeline-responsibilities {
-      margin-top: 5px;
-      margin-bottom: 10px;
-      font-size: 14px;
-    }
-  
-    .timeline-item::before {
-      display: none;
-    }
+    background-color: var(--main-bg-color);
+    height: auto;
+    width: auto;
+      }
+  .timeline-content{
+    font-size: 5px;
+    margin-bottom:20px;
   }
-</style>
+  .timeline {
+    direction: vertical;
+  }
+  .desktop-only {
+    display:contents;
+  }
+  
+  
+  .timeline-position {
+    font-size: 17px;
+    margin-bottom:20px;
+  }
+  
+  .timeline-company {
+    margin-top: 10px;
+    margin-bottom:20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .timeline-responsibilities {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    list-style-type:disc;
+    font-size: large;
+  }
+  .timeline-item::before {
+    animation: none;
+  }
+}
+
+  </style>

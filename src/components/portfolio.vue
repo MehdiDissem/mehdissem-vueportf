@@ -170,20 +170,20 @@ import myProjects from "../store/index.js"
 
 @media (min-width: 768px) {
   .project {
-    width: 50%;
+    width: auto;
   }
 }
 
 @media (min-width: 992px) {
   .project {
-    width: 50%;
-    min-width: 30rem;
+    width: auto;
+    margin:20px
   }
 }
 
 @media (max-width: 767px) {
   .project {
-    width: 100%;
+    width: auto;
   }
 }
 
