@@ -1,79 +1,157 @@
 <template>
-    <div id="about">
-      <v-container>
-        <v-row>
-            <v-col cols="12" sm="6" class="d-flex justify-center">
-  <v-img src="../assets/mehdidissem.png" max-width="400px" contain class="image-effect"></v-img>
-</v-col>
-          <v-col cols="12" sm="6">
-            <h2>ABOUT ME</h2>
-            <p>
-              As a Full Stack web developer, I possess a strong commitment to excellence, a collaborative mindset, and effective communication skills.
-            </p>
-            <p>
-              Drawing upon six years of experience across diverse marketing fields, including article writing, SEO, freelancing, and market analysis, I have honed a versatile set of technical and non-technical skills.
-            </p>
-            <p>
-              I am now seeking new opportunities in the IT field to further enhance my technical abilities and contribute to innovative projects.
-            </p>
-          </v-col>
-        </v-row>
-      </v-container>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'about',
-  };
-  </script>
-  
-  <style lang="scss" scoped>
-  #about {
-    padding: 15px;
-    h2 {
-      text-transform: uppercase;
-      font-weight: bold;
-      color: var(--accent-color);
-      padding-top: 15px;
-      font-size: 1.5rem;
-    }
-    p {
-      padding-block: 10px;
-      padding-right: 10px;
-      font-weight: 400;
-      color: var(--gray);
-      font-size: 1.5rem;
+  <div id="about">
+    <v-container>
+      <v-row>
+        <v-col cols="12" sm="6" class="d-flex justify-center">
+          <v-img src="../assets/mehdidissem.png" max-width="400px" contain class="image-effect"></v-img>
+        </v-col>
+        <v-col cols="12" sm="5">
+          <h2>ABOUT ME</h2>
+          <p>
+            As a Full Stack web developer, I possess a strong commitment to excellence, a collaborative mindset, and effective communication skills.
+          </p>
+          <p>
+            Drawing upon six years of experience across diverse marketing fields, including article writing, SEO, freelancing, and market analysis, I have honed a versatile set of technical and non-technical skills.
+          </p>
+          <p>
+            I am now seeking new opportunities in the IT field to further enhance my technical abilities and contribute to innovative projects.
+          </p>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
+  <div class="articles" style="text-align: center;">
+    <h3 class="article-header">My Articles on <span @click="openMedium" class="medium-link">Medium</span></h3> <p class="notice">(click on the title to go to my Medium profile)</p>
+    <iframe src='https://widgets.sociablekit.com/medium-publication-feed/iframe/123402' frameborder='0' width='85%' height='500' style="border:10cap; margin: 10px auto; display:relative;"></iframe>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'about',
+  methods:{
+    openMedium() {
+      window.open('https://medium.com/@mehdissem', '_blank');
     }
   }
-  .image-effect {
-    position: relative;
-    overflow: hidden;
-  }
+};
+</script>
 
-  .image-effect img {
-    transition: all 0.3s ease-out;
+<style lang="scss" scoped>
+#about {
+  padding: 25px;
+  background-color: #1A1A1D;
+  h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--accent-color);
+    padding-top: 15px;
+    font-size: 1.5rem;
   }
+  p {
+    padding-block: 10px;
+    padding-right: 10px;
+    font-weight: 400;
+    // color: var(--gray);
+    color:white;
+    font-size: 1.5rem;
+  }
+}
+.image-effect {
+  position: relative;
+  overflow: hidden;
+}
 
-  .image-effect:hover img {
-    transform: scale(1.2);
-  }
+.image-effect img {
+  transition: all 0.3s ease-out;
+}
 
-  .image-effect::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    background: rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease-out;
-    pointer-events: none;
-  }
+.image-effect::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease-out;
+  pointer-events: none;
+}
 
-  .image-effect:hover::before {
-    opacity: 1;
+.image-effect:hover img {
+  transform: scale(1.1);
+}
+
+.image-effect:hover::after {
+  transform: translate(-50%, -50%) scale(3);
+  width: 200%;
+  height: 200%;
+}
+
+.articles{
+  margin:50px;
+  margin-bottom: 10px;
+}
+.article-header {
+  display: inline-block;
+  position: relative;
+  padding-top: 15px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.article-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.article-header:hover::after {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+.notice{
+  margin-top: 15px;
+  font-size: 13px;
+}
+.notice:hover{
+  animation:shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
   }
-  </style>
   
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@media screen and (max-width: 768px)  {
+  .articles{
+    margin:0px;
+    margin-bottom: 30px;
+}
+}
+</style>
