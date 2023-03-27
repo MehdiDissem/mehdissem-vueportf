@@ -55,3 +55,5 @@ pnpm lint
 ### Customize configuration
 
 See [Configuration Reference](https://vitejs.dev/config/).
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bde69e09-3faf-492f-a699-ea80689c203d/deploy-status)](https://app.netlify.com/sites/mehdi-dissem/deploys)
