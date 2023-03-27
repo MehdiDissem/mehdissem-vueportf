@@ -6,6 +6,7 @@
             <about/>
             <timeline/>
             <portfolio></portfolio>
+            <certifications/>
             <contact/>
             <myFooter></myFooter>
     </v-container>
@@ -20,10 +21,11 @@ import portfolio from "./portfolio.vue"
 import contact from "./contact.vue"
 import myFooter from "./footer.vue"
 import timeline from "./timeline.vue"
+import certifications from "./certifications.vue"
 export default {
     name:'homepage',
     components:{
-        navigation,banner,tools,about,portfolio,contact,myFooter,timeline
+        navigation,banner,tools,about,portfolio,contact,myFooter,timeline,certifications
     }
 }
 </script>
