@@ -2,7 +2,7 @@
     <v-carousel
       cycle
       height="370"
-      hide-delimiters="true"
+      hide-delimiters=""
       show-arrows="hover"
       class="carousel"
     >
@@ -43,6 +43,7 @@
     margin: auto;
     display: block;
     transition: transform 0.2s ease-in-out;
+    transition-delay: 3s;
   }
   
   @media screen and (max-width: 600px) {

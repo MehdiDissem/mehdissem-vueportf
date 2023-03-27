@@ -42,7 +42,7 @@
                 Thank you for your interest on my profile
                 <template v-slot:actions>
                   <v-btn
-                    color="pink"
+                    color=var(--accent-color)
                     variant="text"
                     @click="snackbar = false"
                   >

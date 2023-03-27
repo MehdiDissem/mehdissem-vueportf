@@ -75,19 +75,19 @@ export default {
   transition: all 0.3s ease-out;
 }
 
-.image-effect::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease-out;
-  pointer-events: none;
-}
+// .image-effect::after {
+//   content: "";
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%) scale(0);
+//   width: 0;
+//   height: 0;
+//   border-radius: 50%;
+//   background: rgba(255, 255, 255, 0.2);
+//   transition: all 0.3s ease-out;
+//   pointer-events: none;
+// }
 
 .image-effect:hover img {
   transform: scale(1.1);
