@@ -17,6 +17,8 @@
             I am now seeking new opportunities in the IT field to further enhance my technical abilities and contribute to innovative projects.
           </p> -->
           <div>
+            <h2>Certifications</h2>
+            <h4 class="creds">Click on the certification to show credential</h4>
             <certifications style="background-color: transparent;"></certifications>
           </div>
         </v-col>
@@ -160,5 +162,21 @@ export default {
     margin:0px;
     margin-bottom: 30px;
 }
+}
+.creds{
+  font-size: 14px;
+  color:white;
+  animation: shake 0.5s ease-in-out 3s;
+}
+.creds:hover{
+  animation:shake 0.5s ease-in-out 3s
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-5px, 5px); }
+  50% { transform: translate(5px, -5px); }
+  75% { transform: translate(5px, 5px); }
+  100% { transform: translate(-5px, -5px); }
 }
 </style>

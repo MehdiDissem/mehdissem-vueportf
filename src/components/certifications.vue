@@ -53,8 +53,17 @@
   }
   
   .certification-image:hover {
-    transform: scale(2.2);
+    transform: scale(1.8);
     z-index: 9999;
   }
+
+  @media screen and (max-width: 768px) {
+    .certification-image {
+      max-width: 80%;
+      max-height: 80%;
+    }
+  }
+
+
   </style>
   
