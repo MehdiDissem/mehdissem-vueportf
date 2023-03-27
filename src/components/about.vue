@@ -13,9 +13,12 @@
           <p>
             Drawing upon six years of experience across diverse marketing fields, including article writing, SEO, freelancing, and market analysis, I have honed a versatile set of technical and non-technical skills.
           </p>
-          <p>
+          <!-- <p>
             I am now seeking new opportunities in the IT field to further enhance my technical abilities and contribute to innovative projects.
-          </p>
+          </p> -->
+          <div>
+            <certifications style="background-color: transparent;"></certifications>
+          </div>
         </v-col>
       </v-row>
     </v-container>
@@ -27,8 +30,12 @@
 </template>
 
 <script>
+import certifications from "./certifications.vue"
 export default {
   name: 'about',
+  components: {
+    'certifications': certifications
+  },
   methods:{
     openMedium() {
       window.open('https://medium.com/@mehdissem', '_blank');

@@ -5,8 +5,8 @@
             <tools/>
             <about/>
             <timeline/>
-            <portfolio></portfolio>
             <!-- <certifications/> -->
+            <portfolio></portfolio>
             <contact/>
             <myFooter></myFooter>
     </v-container>
