@@ -3,7 +3,12 @@
         <navigation id="nav"></navigation>
             <banner/>
             <tools/>
-            <about/>
+            <v-lazy 
+            :min-height="200"
+            :options="{'threshold':0.5}"
+            transition="fade-transition">
+                <about/>
+            </v-lazy>
             <timeline/>
             <!-- <certifications/> -->
             <v-lazy 

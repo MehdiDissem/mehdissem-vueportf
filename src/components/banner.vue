@@ -19,7 +19,7 @@
                 <span class="animated-text">m</span>
             </h1>
             <h2 class="secondary-text"  v-on:mouseover="changeQuote" v-html="quoteWithSpan"></h2>
-            <v-btn color="accent" outlined class="btn my-8" @click="showResumeDialog = true">View Resume</v-btn>
+            <v-btn color="accent" outlined class="btn my-8" @click="showResumeDialog = true, snackbar=true">View Resume</v-btn>
             <v-dialog v-model="showResumeDialog" width="80%">
               <object :data="resume" type="application/pdf" width="100%" height="600px">
                 <embed :src="resume" type="application/pdf" width="100%" height="600px" />
@@ -37,6 +37,19 @@
                   <i class="fab fa-linkedin icon"></i>
                 </v-icon>
               </v-btn>
+              <v-snackbar
+                v-model="snackbar">
+                Thank you for your interest on my profile
+                <template v-slot:actions>
+                  <v-btn
+                    color="pink"
+                    variant="text"
+                    @click="snackbar = false"
+                  >
+                    Close
+                  </v-btn>
+                </template>
+              </v-snackbar>
         </div>
         
     </div>
@@ -62,7 +75,8 @@
         quoteIndex: 0,
         circlePos: { x: 0, y: 0 },
         showResumeDialog: false,
-        resume: ""
+        resume: "",
+        snackbar:false
       };
     },
     mounted() {
