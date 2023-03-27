@@ -6,7 +6,7 @@
             <about/>
             <timeline/>
             <portfolio></portfolio>
-            <certifications/>
+            <!-- <certifications/> -->
             <contact/>
             <myFooter></myFooter>
     </v-container>
