@@ -6,7 +6,12 @@
             <about/>
             <timeline/>
             <!-- <certifications/> -->
-            <portfolio></portfolio>
+            <v-lazy 
+            :min-height="200"
+            :options="{'threshold':0.5}"
+            transition="fade-transition">
+                <portfolio></portfolio>
+            </v-lazy>
             <contact/>
             <myFooter></myFooter>
     </v-container>
