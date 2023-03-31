@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="ma-0 portfolio" id="portfolio">
-    <h2 class="">Portfolio</h2>
+    <h2 class="check">Portfolio</h2>
     <v-container fluid class="projects pa-0 pa-md-4">
           <v-row align="center" justify="center" class="mx-0" no-gutters>
           <v-col cols="12" md="6" lg="4" v-for="(project, index) in myProjects" :key="index">
@@ -93,6 +93,13 @@ import myProjects from "../store/index.js"
 </script>
 
 <style scoped>
+.check{
+  margin:auto;
+  padding:auto;
+  text-align: center;
+  margin-bottom: -3%;
+  margin-top: -2%;
+}
 .projects {
   margin: auto;
   padding: 5%;
@@ -196,6 +203,7 @@ import myProjects from "../store/index.js"
   /* overflow: hidden; */
   z-index: 1;
   /* padding-right: 10px; */
+  margin-bottom: 50px;
 }
 
 .github-link span {
