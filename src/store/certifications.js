@@ -15,6 +15,11 @@ const myCertifications = [
         certificateURL:"https://www.udemy.com/certificate/UC-67d793a0-1c43-4fea-8c3f-8eb7216f3ccc/"
     },
     {
+        name:"AWS: Elastic Load Balancing with Auto Scaling Groups",
+        image:"https://res.cloudinary.com/dlnvacfsc/image/upload/v1680283339/certifications/AWS-Elastic_Load-Balancing-with-auto-scaling-groups_ajtoyr.jpg",
+        certificateURL:"https://udemy-certificate.s3.amazonaws.com/image/UC-79c8e70d-54ef-44e1-ad69-54223340dd46.jpg"
+    },
+    {
         name:"Agile Metrics for Agile Project Management",
         image:"https://res.cloudinary.com/dlnvacfsc/image/upload/v1679945915/certifications/Agile_Metrics_certification_oglqbu.jpg",
         certificateURL:"https://www.udemy.com/certificate/UC-962569f2-0ceb-4743-881b-f796124a4f3b/"
