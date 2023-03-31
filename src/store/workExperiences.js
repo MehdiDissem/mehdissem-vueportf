@@ -10,7 +10,7 @@ const myExperiences =[    {        "position": "Chief web analytics consultant",
       "Coordinating with marketing and creative teams to ensure smooth execution.",
       "Ensuring that all marketing assets are consistent with the global business strategy and brand guidelines.",
       "Developing comprehensive support documentation, including risk logs and requirement specifications."
-    ]
+    ],
   },
   {
     "position": "Search Engine Optimization Manager",

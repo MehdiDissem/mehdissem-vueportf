@@ -16,6 +16,9 @@
             <p>
               As a full stack JS developer with a background in marketing, I bring a unique perspective and set of skills to every project. With over 6 years of experience in various marketing fields, including digital marketing, SEO, and content creation, I understand how to build web applications that not only function flawlessly but also effectively reach and engage target audiences. From designing visually appealing user interfaces to developing robust backend solutions, I am passionate about creating applications that meet the needs of both users and businesses. If you're looking for a full stack JS developer with a marketing edge, let's connect and bring your project to the next level.
             </p>
+            <p class="email">
+              Email: mehdissem@gmail.com
+            </p>
           </v-col>
   
           <v-col class="form" xs="12" sm="12" md="6">
@@ -42,9 +45,14 @@
                 placeholder="message"
                 outlined
               ></v-textarea>
-              <v-btn outlined medium @click="sendEmail" :loading="loading" class="montserrat  btn my-8" color="accent">
-                {{ success ? 'Sent!' : 'Submit' }}
-                </v-btn>
+              <v-tooltip text="Thank you ! Please make sure that the Name and Email are right 🧐" >
+                <template v-slot:activator="{props}">
+                  <v-btn outlined medium @click="sendEmail" :loading="loading" class="montserrat  btn my-8" color="accent" :disabled="!isFormValid" v-bind="props">
+                    {{ success ? 'Sent!' : 'Submit' }}
+                    </v-btn>
+
+                </template>
+              </v-tooltip>
             </v-form>
           </v-col>
         </v-row>
@@ -93,7 +101,12 @@
             this.loading = false;
           });
       }
-    }
+    },
+    computed: {
+      isFormValid() {
+    return !!this.name && !!this.email;
+  }
+}
   }
 </script>
 
@@ -101,6 +114,9 @@
 
 #contact{
     background-color:var( --main-bg-color);
+}
+.email{
+  margin-top: 5%;
 }
 
 .info-text{
