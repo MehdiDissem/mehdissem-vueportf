@@ -3,7 +3,11 @@
     <v-container>
       <v-row>
         <v-col cols="12" sm="6" class="d-flex justify-center">
-          <v-img src="../assets/mehdidissem.png" max-width="400px" contain class="image-effect"></v-img>
+          <v-tooltip text="Hello ! 😁" >
+                  <template v-slot:activator="{ props }">
+                    <v-img src="../assets/mehdidissem.png" v-bind="props" max-width="400px" contain class="image-effect"></v-img>
+                  </template>
+                </v-tooltip>
         </v-col>
         <v-col cols="12" sm="5">
           <h2>ABOUT ME</h2>
