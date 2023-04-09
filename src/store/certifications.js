@@ -3,6 +3,10 @@ const myCertifications = [
         name:"Full Stack JavaScript Developer",
         image:"https://res.cloudinary.com/dlnvacfsc/image/upload/v1679945737/certifications/RBK_certification_cog371.png",
         certificateURL:"https://verified.sertifier.com/en/verify/20541824483282"
+    },{
+        name:"Scrum Fundamentals Certified",
+        image:"https://res.cloudinary.com/dlnvacfsc/image/upload/v1681043514/certifications/973419_SFC_Mehdi_Dissem_oinlfr.jpg",
+        certificateURL:"https://res.cloudinary.com/dlnvacfsc/image/upload/v1681043514/certifications/973419_SFC_Mehdi_Dissem_oinlfr.jpg"
     },
     {
         name:"Software Architecture",

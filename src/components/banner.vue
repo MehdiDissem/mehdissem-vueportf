@@ -19,13 +19,10 @@
                 <span class="animated-text">m</span>
             </h1>
             <h2 class="secondary-text"  v-on:mouseover="changeQuote" v-html="quoteWithSpan"></h2>
-            <v-btn color="accent" outlined class="btn my-8" @click="showResumeDialog = true, snackbar=true">View Resume</v-btn>
-            <v-dialog v-model="showResumeDialog" width="80%">
-              <object :data="resume" type="application/pdf" width="100%" height="600px">
-                <embed :src="resume" type="application/pdf" width="100%" height="600px" />
-                <p>Your web browser doesn't have a PDF plugin. Instead, you can <a :href="resume">click here to download the PDF file.</a></p>
-              </object>
-            </v-dialog>
+            <!-- <v-btn color="accent" outlined class="btn my-8" @click="showResumeDialog = true, snackbar=true,openResume">View Resume -->
+              <!-- <a href="https://drive.google.com/file/d/1GH65djoS1ad5WyLYPey45QV3pFXGqCUQ/view?usp=sharing"></a> -->
+            <!-- </v-btn> -->
+            <v-btn color="accent" outlined class="btn my-8" @click="openResume">View Resume</v-btn>
             <v-btn color="accent" outlined class="btn my-8" href="https://github.com/MehdiDissem" target="_blank">
                 <v-icon left>
                   <i class="fab fa-github icon"></i>
@@ -101,6 +98,9 @@
     },
     toggleOverlay() {
       this.showResumeDialog = !this.showResumeDialog;
+    },
+    openResume() {
+      window.open('https://drive.google.com/file/d/1Lom7u3QafHvrYfDrblUSFAUjK9wzqegk/view?usp=sharing', '_blank');
     }
   }
   }
